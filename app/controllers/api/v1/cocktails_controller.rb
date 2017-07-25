@@ -25,11 +25,11 @@ module Api
       def destroy
 
       end
-      
+
       private
 
       def cocktail_params
-        params.require(:cocktail).permit(:name, :description, :instructions)
+        params.require(:cocktail).permit(:name, :description, :instructions, proportion_attributes: [:amount, :ingredient_name])
       end
 
     end
